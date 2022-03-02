@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan1: hsl(186, 14%, 43%);
+$dark-grayish-cyan2: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$more-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  height: 100vh;
+  background-color: $light-grayish-cyan;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .img-holder {
+    margin: 2.5rem auto;
+  }
+
+  .container-calc {
+    background-color: $white;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+
+    .amounts {
+      margin-top: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .bill {
+        label {
+          font-size: 1rem;
+          font-weight: 700;
+          color: $dark-grayish-cyan1;
+          position: relative;
+        }
+
+        label:before {
+          content: "";
+          position: absolute;
+          left: 16px;
+          top: 40px;
+          bottom: 0;
+          width: 20px;
+          height: 20px;
+          background: url("../assets/img/icon-dollar.svg");
+          background-repeat: no-repeat;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+
+        input {
+          width: 100%;
+          padding: 5px 15px;
+          border-radius: 5px;
+          border: none;
+          background: $more-light-grayish-cyan;
+          text-align: right;
+          font-size: 1.5rem;
+          font-weight: 700;
+          outline-color: $light-grayish-cyan;
+        }
+      }
+
+      .tip {
+        h5 {
+          color: $dark-grayish-cyan1;
+          font-size: 1rem;
+          font-weight: 700;
+        }
+
+        .button-tip-container {
+          margin-top: 17px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+          grid-auto-rows: 50px;
+          grid-gap: 25px;
+
+          .btn-tip {
+            border: none;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: $more-light-grayish-cyan;
+            background: $very-dark-cyan;
+            border-radius: 5px;
+          }
+
+          .active {
+            background: $strong-cyan;
+          }
+
+          .btn-tip:hover {
+            color: $very-dark-cyan;
+            background-color: $light-grayish-cyan;
+          }
+
+          .custom {
+            border: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: right;
+            border-radius: 5px;
+            background-color: $more-light-grayish-cyan;
+            outline-color: $light-grayish-cyan;
+          }
+        }
+      }
+
+      .numsOfPeople {
+        margin-top: 10px;
+
+        label {
+          font-size: 1rem;
+          font-weight: 700;
+          color: $dark-grayish-cyan1;
+          position: relative;
+        }
+
+        .warning {
+          color: red;
+          float: right;
+        }
+
+        label:before {
+          content: "";
+          position: absolute;
+          left: 13px;
+          top: 50px;
+          bottom: 0;
+          width: 20px;
+          height: 20px;
+          background: url("../assets/img/icon-person.svg");
+          background-repeat: no-repeat;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+
+        input {
+          width: 100%;
+          padding: 5px 15px;
+          border-radius: 5px;
+          border: none;
+          background: $more-light-grayish-cyan;
+          text-align: right;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $very-dark-cyan;
+          outline-color: $light-grayish-cyan;
+        }
+      }
+    }
+
+    .calcs {
+      margin-top: 2rem;
+      width: 100%;
+      border-radius: 15px;
+      background: $very-dark-cyan;
+      padding: 2.2rem 1.2rem 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .tip-amount--person,
+      .total-amount--person {
+        display: flex;
+        align-items: center;
+
+        .labels {
+          margin-right: auto;
+
+          .title {
+            font-size: 0.9rem;
+            color: $white;
+            font-weight: 400;
+          }
+
+          .person {
+            font-size: 0.7rem;
+            color: $dark-grayish-cyan1;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .tip-result,
+      .total-result {
+        font-size: 1.8rem;
+        color: $strong-cyan;
+        font-weight: 600;
+      }
+
+      .button-holder {
+        input {
+          border: none;
+          border-radius: 5px;
+          width: 100%;
+          height: 310%;
+          font-size: 1.2rem;
+          font-weight: 700;
+          background: hsl(186, 83%, 21%);
+          color: $very-dark-cyan;
+        }
+
+        input:hover {
+          color: $very-dark-cyan;
+          background-color: $light-grayish-cyan;
+        }
+
+        .reset {
+          height: 45px;
+        }
+
+        .resetActive{
+          background-color: $strong-cyan;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1139px) {
+  .App {
+    .img-holder {
+      margin: 7rem 0 5rem 0;
+    }
+
+    .container-calc {
+      width: 68%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+      grid-auto-rows: 415px;
+      gap: 15px;
+      padding: 2.2rem 2.1rem 2rem 2.8rem;
+      margin-bottom: 3rem;
+
+      .amounts {
+        padding-right: 2rem;
+
+        .bill {
+          margin-top: 9px;
+
+          label:before {
+            left: 16px;
+            top: 47px;
+            bottom: 0;
+          }
+        }
+
+        gap: 40px;
+
+        .tip {
+          .button-tip-container {
+            margin-top: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(89px, 1fr));
+            grid-auto-rows: 48px;
+            grid-gap: 17px;
+
+            .btn-tip {
+              font-size: 1.3rem;
+            }
+          }
+        }
+        .numsOfPeople {
+          margin-top: 3px;
+
+          label:before {
+            left: 16px;
+            top: 40px;
+            bottom: 0;
+          }
+        }
+      }
+
+      .calcs {
+        margin-top: 0;
+
+        .tip-amount--person,
+        .total-amount--person {
+          width: 94%;
+          .labels {
+            margin-left: 20px;
+            margin-top: 12px;
+
+            .title {
+              font-size: 1rem;
+              font-weight: 700;
+            }
+
+            .person {
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        .tip-result,
+        .total-result {
+          font-size: 2.9rem;
+        }
+
+        .button-holder {
+          margin-top: 96px;
+          margin-left: 20px;
+          width: 89%;
+          input {
+            height: 105%;
+          }
+        }
+      }
+    }
+  }
+}
+
+input,
+button:hover {
+  cursor: pointer;
+}
+
+

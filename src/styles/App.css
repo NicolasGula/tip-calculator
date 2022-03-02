@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  height: 100vh;
+  background-color: #c5e4e7;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .img-holder {
+  margin: 2.5rem auto;
+}
+
+.App .container-calc {
+  background-color: white;
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.App .container-calc .amounts {
+  margin-top: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.App .container-calc .amounts .bill label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5e7a7d;
+  position: relative;
+}
+
+.App .container-calc .amounts .bill label:before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 40px;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: url("/assets/img/icon-dollar.svg");
+  background-repeat: no-repeat;
+}
+
+.App .container-calc .amounts .bill input::-webkit-outer-spin-button,
+.App .container-calc .amounts .bill input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.App .container-calc .amounts .bill input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.App .container-calc .amounts .bill input {
+  width: 100%;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background: #f4fafa;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  outline-color: #c5e4e7;
+}
+
+.App .container-calc .amounts .tip h5 {
+  color: #5e7a7d;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.App .container-calc .amounts .tip .button-tip-container {
+  margin-top: 17px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(120px, 2fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(120px, 2fr));
+  grid-auto-rows: 50px;
+  grid-gap: 25px;
+}
+
+.App .container-calc .amounts .tip .button-tip-container .btn-tip {
+  border: none;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #f4fafa;
+  background: #00494d;
+  border-radius: 5px;
+}
+
+.App .container-calc .amounts .tip .button-tip-container .active {
+  background: #26c0ab;
+}
+
+.App .container-calc .amounts .tip .button-tip-container .btn-tip:hover {
+  color: #00494d;
+  background-color: #c5e4e7;
+}
+
+.App .container-calc .amounts .tip .button-tip-container .custom {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: right;
+  border-radius: 5px;
+  background-color: #f4fafa;
+  outline-color: #c5e4e7;
+}
+
+.App .container-calc .amounts .numsOfPeople {
+  margin-top: 10px;
+}
+
+.App .container-calc .amounts .numsOfPeople label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5e7a7d;
+  position: relative;
+}
+
+.App .container-calc .amounts .numsOfPeople .warning {
+  color: red;
+  float: right;
+}
+
+.App .container-calc .amounts .numsOfPeople label:before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 50px;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: url("/assets/img/icon-person.svg");
+  background-repeat: no-repeat;
+}
+
+.App .container-calc .amounts .numsOfPeople input::-webkit-outer-spin-button,
+.App .container-calc .amounts .numsOfPeople input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.App .container-calc .amounts .numsOfPeople input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.App .container-calc .amounts .numsOfPeople input {
+  width: 100%;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: none;
+  background: #f4fafa;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00494d;
+  outline-color: #c5e4e7;
+}
+
+.App .container-calc .calcs {
+  margin-top: 2rem;
+  width: 100%;
+  border-radius: 15px;
+  background: #00494d;
+  padding: 2.2rem 1.2rem 1.4rem 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+
+.App .container-calc .calcs .tip-amount--person,
+.App .container-calc .calcs .total-amount--person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .container-calc .calcs .tip-amount--person .labels,
+.App .container-calc .calcs .total-amount--person .labels {
+  margin-right: auto;
+}
+
+.App .container-calc .calcs .tip-amount--person .labels .title,
+.App .container-calc .calcs .total-amount--person .labels .title {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 400;
+}
+
+.App .container-calc .calcs .tip-amount--person .labels .person,
+.App .container-calc .calcs .total-amount--person .labels .person {
+  font-size: 0.7rem;
+  color: #5e7a7d;
+  font-weight: 700;
+}
+
+.App .container-calc .calcs .tip-result,
+.App .container-calc .calcs .total-result {
+  font-size: 1.8rem;
+  color: #26c0ab;
+  font-weight: 600;
+}
+
+.App .container-calc .calcs .button-holder input {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 310%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #095962;
+  color: #00494d;
+}
+
+.App .container-calc .calcs .button-holder input:hover {
+  color: #00494d;
+  background-color: #c5e4e7;
+}
+
+.App .container-calc .calcs .button-holder .reset {
+  height: 45px;
+}
+
+.App .container-calc .calcs .button-holder .resetActive {
+  background-color: #26c0ab;
+}
+
+@media screen and (min-width: 1139px) {
+  .App .img-holder {
+    margin: 7rem 0 5rem 0;
+  }
+  .App .container-calc {
+    width: 68%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(10%, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
+    grid-auto-rows: 415px;
+    gap: 15px;
+    padding: 2.2rem 2.1rem 2rem 2.8rem;
+    margin-bottom: 3rem;
+  }
+  .App .container-calc .amounts {
+    padding-right: 2rem;
+    gap: 40px;
+  }
+  .App .container-calc .amounts .bill {
+    margin-top: 9px;
+  }
+  .App .container-calc .amounts .bill label:before {
+    left: 16px;
+    top: 47px;
+    bottom: 0;
+  }
+  .App .container-calc .amounts .tip .button-tip-container {
+    margin-top: 14px;
+    -ms-grid-columns: (minmax(89px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(89px, 1fr));
+    grid-auto-rows: 48px;
+    grid-gap: 17px;
+  }
+  .App .container-calc .amounts .tip .button-tip-container .btn-tip {
+    font-size: 1.3rem;
+  }
+  .App .container-calc .amounts .numsOfPeople {
+    margin-top: 3px;
+  }
+  .App .container-calc .amounts .numsOfPeople label:before {
+    left: 16px;
+    top: 40px;
+    bottom: 0;
+  }
+  .App .container-calc .calcs {
+    margin-top: 0;
+  }
+  .App .container-calc .calcs .tip-amount--person,
+  .App .container-calc .calcs .total-amount--person {
+    width: 94%;
+  }
+  .App .container-calc .calcs .tip-amount--person .labels,
+  .App .container-calc .calcs .total-amount--person .labels {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+  .App .container-calc .calcs .tip-amount--person .labels .title,
+  .App .container-calc .calcs .total-amount--person .labels .title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .App .container-calc .calcs .tip-amount--person .labels .person,
+  .App .container-calc .calcs .total-amount--person .labels .person {
+    font-size: 0.9rem;
+  }
+  .App .container-calc .calcs .tip-result,
+  .App .container-calc .calcs .total-result {
+    font-size: 2.9rem;
+  }
+  .App .container-calc .calcs .button-holder {
+    margin-top: 96px;
+    margin-left: 20px;
+    width: 89%;
+  }
+  .App .container-calc .calcs .button-holder input {
+    height: 105%;
+  }
+}
+
+input,
+button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=App.css.map */
